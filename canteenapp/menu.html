@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Canteen | Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="menu.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- STICKY NAVIGATION (same structure as index.html) -->
+  <!-- ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logos">
+        <div class="logo-placeholder college-logo">CLG</div>
+        <span class="nav-brand">Smart Canteen</span>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-btn cart-btn" href="cart.html" aria-label="View cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================================= -->
+  <!-- PAGE HEADER -->
+  <!-- ============================================= -->
+  <section class="page-header">
+    <h1>Today's Menu</h1>
+    <p>Add what you want, skip the counter queue, collect it with a token instead.</p>
+  </section>
+
+  <!-- Category filter tabs — populated by menu.js -->
+  <div class="category-tabs" id="categoryTabs"></div>
+
+  <!-- Food grid — populated by menu.js -->
+  <div class="menu-grid" id="menuGrid"></div>
+
+  <!-- Sticky "view cart" bar — hidden until cart has items -->
+  <div class="sticky-cart-bar" id="stickyCartBar">
+    <div class="sticky-cart-info">
+      <span id="stickyItemCount">0 items</span>
+      <span id="stickyTotal">₹0</span>
+    </div>
+    <a class="btn-view-cart" href="cart.html">View Cart</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Canteen | Skip the Queue</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- SECTION 1: STICKY NAVIGATION -->
+  <!-- ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logos">
+        <div class="logo-placeholder college-logo">CLG</div>
+        <span class="nav-brand">Smart Canteen</span>
+      </div>
+
+      <!-- Desktop nav links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-btn cart-btn" href="cart.html" aria-label="View cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#home">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================================= -->
+  <!-- SECTION 2: HERO -->
+  <!-- ============================================= -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">🎓 Built for College Canteens</span>
+        <h1 class="hero-heading">
+          Skip the Queue.<br />
+          <span class="highlight">Grab Your Food Faster.</span>
+        </h1>
+        <p class="hero-desc">
+          Order food online, receive a digital token, and collect your food
+          without waiting in long payment queues.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="menu.html">Order Now</a>
+          <a class="btn btn-outline" href="menu.html">View Menu</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- CSS/SVG mockup — not a literal illustration, see architecture note -->
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="mock-order-line"></div>
+            <div class="mock-order-line short"></div>
+            <div class="mock-token-badge">
+              <span class="mock-token-label">Token</span>
+              <span class="mock-token-value">A127</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card card-kitchen">
+          <span>👨‍🍳</span> Preparing your order
+        </div>
+        <div class="floating-card card-ready">
+          <span>✅</span> Order Ready
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- SECTION 3: ABOUT -->
+  <!-- ============================================= -->
+  <section class="about" id="about">
+    <div class="section-container about-grid">
+      <div class="about-text">
+        <h2>Order before you reach the counter</h2>
+        <p>
+          A college break is short. Standing in line to order, then standing
+          again to wait for it to be made, eats most of it. Smart Canteen
+          moves the ordering and waiting online, so the only queue left is
+          the one for actually picking up food that's already ready.
+        </p>
+      </div>
+
+      <ol class="how-it-works">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <h3>Order digitally</h3>
+            <p>Browse the menu and pay from your phone, from anywhere on campus.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <h3>Get a token</h3>
+            <p>A unique token confirms your order and tracks its status.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <h3>Pick up when ready</h3>
+            <p>Walk up to the counter only once, when your food is waiting.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- SECTION 4: FEATURES -->
+  <!-- ============================================= -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <h2 class="section-heading">What it does</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎟️</span>
+          <h3>Digital token</h3>
+          <p>Every order gets a unique token, so there's no confusion about whose food is whose.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📋</span>
+          <h3>Live menu</h3>
+          <p>Items that have run out are marked unavailable so you never order something that isn't there.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🛒</span>
+          <h3>Simple cart</h3>
+          <p>Add items, adjust quantities, and see your total before you pay — no surprises at checkout.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⏱️</span>
+          <h3>No idle waiting</h3>
+          <p>Order ahead, get on with your break, and come back only when your food is ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- SECTION 5: CONTACT -->
+  <!-- ============================================= -->
+  <section class="contact" id="contact">
+    <div class="section-container contact-grid">
+      <div>
+        <h2>Campus Main Canteen</h2>
+        <p class="contact-line">📍 Ground Floor, Main Academic Block</p>
+        <p class="contact-line">🕐 Open 8:00 AM – 6:00 PM, all working days</p>
+        <p class="contact-line">📞 Canteen counter: ask any staff member on duty</p>
+      </div>
+      <div class="contact-note-card">
+        <p>
+          This V1 prototype doesn't have a live support form yet — that
+          needs a backend to actually receive messages, which is planned
+          for a later version. For now, reach the canteen in person or
+          through the college office.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

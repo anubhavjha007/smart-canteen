@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Canteen | Payment</title>
+  <link rel="stylesheet" href="payment.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="payment-wrapper">
+
+    <!-- Top bar: college + canteen branding -->
+    <header class="brand-header">
+      <div class="logo-box">
+        <div class="logo-placeholder college-logo">CLG</div>
+        <span class="brand-text">Smart Canteen</span>
+      </div>
+      <div class="secure-badge">🔒 Secure Payment</div>
+    </header>
+
+    <main class="payment-card">
+
+      <!-- Order Summary -->
+      <section class="order-summary">
+        <h2>Order Summary</h2>
+        <ul id="orderList" class="order-list">
+          <!-- Items injected by JS from checkoutCart -->
+        </ul>
+        <div class="totals">
+          <div class="total-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+          <div class="total-row"><span>GST (5%)</span><span id="gst">₹0</span></div>
+          <div class="total-row grand-total"><span>Grand Total</span><span id="grandTotal">₹0</span></div>
+        </div>
+      </section>
+
+      <!-- Payment Options -->
+      <section class="payment-methods">
+        <h2>Pay Using</h2>
+
+        <div class="qr-section">
+          <div class="qr-placeholder">
+            <span>QR CODE</span>
+          </div>
+          <p class="upi-id">UPI ID: <strong>canteen@upi</strong></p>
+        </div>
+
+        <div class="method-list">
+          <label class="method-option active">
+            <input type="radio" name="payMethod" value="upi" checked />
+            <span>UPI</span>
+          </label>
+          <label class="method-option active">
+            <input type="radio" name="payMethod" value="qr" />
+            <span>QR Scan</span>
+          </label>
+          <label class="method-option disabled">
+            <input type="radio" name="payMethod" value="card" disabled />
+            <span>Card (Coming in V2)</span>
+          </label>
+          <label class="method-option disabled">
+            <input type="radio" name="payMethod" value="cash" disabled />
+            <span>Cash (Coming in V2)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Timer: DECORATIVE ONLY. Does not expire the session in V1. -->
+      <div class="timer-box">
+        Session expires in <span id="timer">09:59</span>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-buttons">
+        <button id="cancelBtn" class="btn btn-cancel">Cancel</button>
+        <button id="payNowBtn" class="btn btn-pay">Pay Now</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Processing Overlay: hidden until Pay Now is clicked -->
+  <div id="processingOverlay" class="processing-overlay hidden">
+    <div class="spinner"></div>
+    <p>Processing Payment...</p>
+  </div>
+
+  <script src="payment.js"></script>
+</body>
+</html>

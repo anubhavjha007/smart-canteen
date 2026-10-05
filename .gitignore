@@ -1,0 +1,27 @@
+node_modules/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build output and caches
+build/
+dist/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+.vite/
+*.tsbuildinfo
+
+# Logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# OS files and local archives
+.DS_Store
+Thumbs.db
+canteenappzip.zip

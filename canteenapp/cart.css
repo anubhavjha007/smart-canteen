@@ -1,0 +1,184 @@
+/* =========================================================
+   CART PAGE
+   Root variables, reset, navbar and .btn styles come from
+   style.css (linked before this file in cart.html).
+========================================================= */
+
+.cart-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 44px 24px 100px;
+}
+
+.cart-page h1 {
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+/* ---------- Empty state ---------- */
+.cart-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 60px 20px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.cart-empty .empty-icon {
+  font-size: 46px;
+}
+
+.cart-empty p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------- Cart list ---------- */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.cart-row {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.cart-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.cart-row-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.cart-row-unit {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.cart-row-total {
+  font-weight: 800;
+  color: var(--green-primary);
+  min-width: 54px;
+  text-align: right;
+}
+
+.remove-btn {
+  background: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #fdeceb;
+  color: #c0392b;
+}
+
+/* Quantity stepper (also used in menu.css — duplicated here so
+   cart.html doesn't need to load menu.css just for this) */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+  padding: 4px 6px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--green-primary);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background: var(--green-dark);
+}
+
+.qty-value {
+  min-width: 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ---------- Summary / checkout ---------- */
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 22px;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cart-summary-row span:first-child {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.cart-summary-row span:last-child {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--green-primary);
+}
+
+.cart-summary-note {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+#checkoutBtn {
+  width: 100%;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 560px) {
+  .cart-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info remove"
+      "stepper total";
+    row-gap: 10px;
+  }
+  .cart-row-info { grid-area: info; }
+  .remove-btn { grid-area: remove; justify-self: end; }
+  .qty-stepper { grid-area: stepper; }
+  .cart-row-total { grid-area: total; justify-self: end; }
+}

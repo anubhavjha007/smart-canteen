@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(8px, 2vw, 20px);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(255,255,255,0.10), transparent 45%),
+    linear-gradient(155deg, #073b26 0%, #0f5132 45%, #17925e 100%);
+}
+
+.success-wrapper {
+  width: 100%;
+  max-width: 420px;
+  height: min(100dvh - 16px, 780px);
+  display: flex;
+}
+
+.success-card {
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: clamp(16px, 3.5vw, 26px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  animation: cardIn 0.45s ease;
+  overflow: hidden;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Tick ---------- */
+.tick-circle {
+  width: clamp(56px, 14vw, 76px);
+  height: clamp(56px, 14vw, 76px);
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.tick-svg { width: 100%; height: 100%; }
+
+.tick-svg circle {
+  stroke: #17925e;
+  stroke-width: 3;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: circleDraw 0.5s ease forwards;
+}
+
+.tick-svg path {
+  stroke: #0f5132;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: tickDraw 0.3s ease 0.5s forwards;
+}
+
+@keyframes circleDraw { to { stroke-dashoffset: 0; } }
+@keyframes tickDraw { to { stroke-dashoffset: 0; } }
+
+h1 {
+  color: #0f5132;
+  font-size: clamp(18px, 4.5vw, 22px);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.thank-you {
+  color: #777;
+  font-size: 12.5px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+/* ---------- Token ---------- */
+.token-box {
+  flex-shrink: 0;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(23,146,94,0.10), rgba(15,81,50,0.10));
+  border: 1px solid rgba(15,81,50,0.18);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.token-label {
+  display: block;
+  font-size: 10.5px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.token-value {
+  font-size: clamp(22px, 6vw, 28px);
+  font-weight: 800;
+  color: #0f5132;
+  letter-spacing: 3px;
+}
+
+/* ---------- Wait ---------- */
+.wait-box {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c0392b;
+  background: rgba(192,57,43,0.08);
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* ---------- Order Details ---------- */
+.order-details {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.order-details h2 {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #0f5132;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.items-list {
+  list-style: none;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 70px;
+  margin-bottom: 6px;
+}
+
+.items-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #444;
+  padding: 3px 0;
+}
+
+.detail-row {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #555;
+  padding: 3px 0;
+  border-top: 1px dashed #eee;
+}
+
+/* ---------- Buttons ---------- */
+.action-buttons {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: clamp(10px, 2.6vw, 13px);
+  border: none;
+  border-radius: 13px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-secondary {
+  background: #f2f2f2;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #e5e5e5;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #17925e, #0f5132);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(15,81,50,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(15,81,50,0.5);
+}
+
+@media (max-height: 700px) {
+  .items-list { max-height: 50px; }
+  .tick-circle { width: 50px; height: 50px; }
+}

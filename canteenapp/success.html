@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Canteen | Payment Successful</title>
+  <link rel="stylesheet" href="success.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="success-wrapper">
+
+    <main class="success-card">
+
+      <!-- Success Icon -->
+      <div class="tick-circle">
+        <svg viewBox="0 0 52 52" class="tick-svg">
+          <circle cx="26" cy="26" r="25" fill="none" />
+          <path fill="none" d="M14 27l7 7 16-16" />
+        </svg>
+      </div>
+
+      <h1>Payment Successful</h1>
+      <p class="thank-you">Thank you for your order!</p>
+
+      <!-- Token -->
+      <div class="token-box">
+        <span class="token-label">Your Token</span>
+        <span id="tokenValue" class="token-value">----</span>
+      </div>
+
+      <!-- Waiting time -->
+      <div class="wait-box">
+        Estimated Waiting Time: <strong id="waitTime">-- min</strong>
+      </div>
+
+      <!-- Order details -->
+      <section class="order-details">
+        <h2>Order Details</h2>
+        <ul id="itemsList" class="items-list"></ul>
+        <div class="detail-row">
+          <span>Grand Total</span>
+          <span id="grandTotalDisplay">₹0</span>
+        </div>
+        <div class="detail-row">
+          <span>Order Date</span>
+          <span id="orderDate">--</span>
+        </div>
+        <div class="detail-row">
+          <span>Order Time</span>
+          <span id="orderTime">--</span>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <div class="action-buttons">
+        <button id="viewMenuBtn" class="btn btn-secondary">View Menu</button>
+        <button id="backHomeBtn" class="btn btn-primary">Back Home</button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="success.js"></script>
+</body>
+</html>

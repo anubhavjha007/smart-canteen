@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  overflow: hidden; /* page itself never scrolls */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(8px, 2vw, 20px);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(255,255,255,0.10), transparent 45%),
+    linear-gradient(155deg, #073b26 0%, #0f5132 45%, #17925e 100%);
+  color: #222;
+}
+
+.payment-wrapper {
+  width: 100%;
+  max-width: 420px;
+  height: min(100dvh - 16px, 780px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- Header ---------- */
+.brand-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-placeholder.college-logo {
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  color: #0f5132;
+  font-weight: 700;
+  font-size: 11px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.brand-text {
+  font-weight: 600;
+  font-size: clamp(14px, 3.6vw, 17px);
+}
+
+.secure-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Main Card ---------- */
+.payment-card {
+  flex: 1;
+  min-height: 0; /* required so children can shrink/scroll inside flex */
+  background: #ffffff;
+  border-radius: 22px;
+  padding: clamp(14px, 3vw, 22px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.payment-card h2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f5132;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+/* ---------- Order Summary (scrolls internally if long) ---------- */
+.order-summary {
+  flex-shrink: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-list {
+  list-style: none;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 90px;
+  padding-right: 4px;
+}
+
+.order-list::-webkit-scrollbar {
+  width: 4px;
+}
+.order-list::-webkit-scrollbar-thumb {
+  background: #cfe8da;
+  border-radius: 4px;
+}
+
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px dashed #ececec;
+}
+
+.totals {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 2px solid #0f5132;
+  flex-shrink: 0;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 12.5px;
+  color: #666;
+}
+
+.grand-total {
+  font-size: clamp(16px, 4vw, 19px);
+  font-weight: 800;
+  color: #0f5132;
+  padding-top: 6px;
+  border-top: 1px solid #eee;
+  margin-top: 4px;
+}
+
+/* ---------- Payment Methods ---------- */
+.payment-methods {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qr-section {
+  background: linear-gradient(135deg, rgba(15,81,50,0.08), rgba(23,146,94,0.08));
+  border: 1px solid rgba(15,81,50,0.15);
+  border-radius: 16px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-placeholder {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: repeating-conic-gradient(#0f5132 0% 25%, #fff 0% 50%) 0 0/14px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(15,81,50,0.25);
+}
+
+.upi-id {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.upi-id strong {
+  color: #0f5132;
+}
+
+.method-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.method-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1.5px solid #e4e4e4;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.method-option.active:hover {
+  border-color: #17925e;
+  background: rgba(23,146,94,0.06);
+}
+
+.method-option input[type="radio"]:checked ~ span {
+  color: #0f5132;
+  font-weight: 700;
+}
+
+.method-option.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Timer ---------- */
+.timer-box {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c0392b;
+  background: rgba(192,57,43,0.08);
+  border-radius: 10px;
+  padding: 6px;
+}
+
+/* ---------- Buttons ---------- */
+.action-buttons {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: clamp(11px, 2.6vw, 14px);
+  border: none;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-cancel {
+  background: #f2f2f2;
+  color: #555;
+}
+
+.btn-cancel:hover {
+  background: #e5e5e5;
+}
+
+.btn-pay {
+  background: linear-gradient(135deg, #17925e, #0f5132);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(15,81,50,0.45);
+}
+
+.btn-pay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15,81,50,0.55);
+}
+
+.btn-pay:active {
+  transform: translateY(0);
+}
+
+/* ---------- Processing Overlay ---------- */
+.processing-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7,59,38,0.94);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 18px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.processing-overlay.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 52px;
+  height: 52px;
+  border: 4px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-height: 700px) {
+  .order-list { max-height: 64px; }
+  .qr-placeholder { width: 46px; height: 46px; }
+}
